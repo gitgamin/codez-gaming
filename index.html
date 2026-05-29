@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,43 +20,69 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="sidebar">
 
-<div class="icon" onclick="showPage('home')">
+<div class="icon active"
+onclick="showSection('home')">
+
 <i class="fas fa-house"></i>
+
 </div>
 
-<div class="icon" onclick="showPage('games')">
+<div class="icon"
+onclick="showSection('games')">
+
 <i class="fas fa-gamepad"></i>
+
 </div>
 
-<div class="icon" onclick="showPage('categories')">
+<div class="icon"
+onclick="showSection('apps')">
+
 <i class="fas fa-table-cells"></i>
+
 </div>
 
-<div class="icon" onclick="showPage('chat')">
+<div class="icon"
+onclick="showSection('chat')">
+
 <i class="fas fa-message"></i>
+
 </div>
 
-<div class="icon" onclick="openSearch()">
+<div class="icon"
+onclick="showSection('search')">
+
 <i class="fas fa-magnifying-glass"></i>
+
 </div>
 
-<div class="icon" onclick="showPage('images')">
+<div class="icon"
+onclick="showSection('images')">
+
 <i class="fas fa-image"></i>
+
 </div>
 
-<div class="icon" onclick="addGame()">
+<div class="icon"
+onclick="showSection('add')">
+
 <i class="fas fa-plus"></i>
+
 </div>
 
 <div class="bottom-icons">
 
 <div class="icon"
 onclick="window.open('https://discord.com','_blank')">
+
 <i class="fab fa-discord"></i>
+
 </div>
 
-<div class="icon" onclick="showPage('files')">
+<div class="icon"
+onclick="showSection('files')">
+
 <i class="fas fa-file"></i>
+
 </div>
 
 </div>
@@ -68,7 +95,7 @@ onclick="window.open('https://discord.com','_blank')">
 
 <!-- HOME -->
 
-<div class="page" id="home">
+<section id="home" class="section">
 
 <div class="logo"></div>
 
@@ -79,108 +106,135 @@ Ultimate game hub
 </p>
 
 <div class="buttons">
-<button onclick="exportSave()">
+
+<button>
 Export Save
 </button>
 
-<button onclick="importSave()">
+<button>
 Import Save
 </button>
-</div>
 
 </div>
+
+</section>
 
 <!-- GAMES -->
 
-<div class="page hidden" id="games">
+<section id="games"
+class="section hidden">
 
 <h1>Games</h1>
 
 <div class="game-grid">
 
-<div class="game-card"
-onclick="openGame('https://orteil.dashnet.org/cookieclicker/')">
-
+<div class="game-card">
 Cookie Clicker
-
 </div>
 
-<div class="game-card"
-onclick="openGame('https://play2048.co/')">
-
-2048
-
-</div>
-
-<div class="game-card"
-onclick="openGame('https://run3.io/')">
-
+<div class="game-card">
 Run 3
+</div>
 
+<div class="game-card">
+2048
+</div>
+
+<div class="game-card">
+Slope
 </div>
 
 </div>
 
-</div>
+</section>
 
-<!-- CATEGORIES -->
+<!-- APPS -->
 
-<div class="page hidden" id="categories">
+<section id="apps"
+class="section hidden">
 
-<h1>Categories</h1>
+<h1>Apps</h1>
 
-<p>Action</p>
-<p>Arcade</p>
-<p>Puzzle</p>
-<p>Idle</p>
+<p>
+Apps section here
+</p>
 
-</div>
+</section>
 
 <!-- CHAT -->
 
-<div class="page hidden" id="chat">
+<section id="chat"
+class="section hidden">
 
 <h1>Community</h1>
 
-<p>Chat system coming soon</p>
+<p>
+Chat section here
+</p>
 
-</div>
+</section>
+
+<!-- SEARCH -->
+
+<section id="search"
+class="section hidden">
+
+<h1>Search</h1>
+
+<input type="text"
+placeholder="Search games..."
+class="search-box">
+
+</section>
 
 <!-- IMAGES -->
 
-<div class="page hidden" id="images">
+<section id="images"
+class="section hidden">
 
 <h1>Wallpapers</h1>
 
-<p>Image gallery coming soon</p>
+<p>
+Images section here
+</p>
 
-</div>
+</section>
+
+<!-- ADD -->
+
+<section id="add"
+class="section hidden">
+
+<h1>Add Game</h1>
+
+<input class="search-box"
+placeholder="Game Name">
+
+<br><br>
+
+<input class="search-box"
+placeholder="Game URL">
+
+<br><br>
+
+<button>
+Add Game
+</button>
+
+</section>
 
 <!-- FILES -->
 
-<div class="page hidden" id="files">
+<section id="files"
+class="section hidden">
 
 <h1>Files</h1>
 
-<p>Your files appear here</p>
+<p>
+Your files appear here
+</p>
 
-</div>
-
-</div>
-
-<!-- GAME MODAL -->
-
-<div id="gameModal">
-
-<div id="gameBox">
-
-<span onclick="closeGame()" id="closeBtn">
-✖
-</span>
-
-<iframe id="gameFrame"></iframe>
-
-</div>
+</section>
 
 </div>
 
