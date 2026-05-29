@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Codez UBG</title>
 
 <link rel="stylesheet" href="style.css">
@@ -15,61 +16,184 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <body>
 
 <!-- SIDEBAR -->
+
 <div class="sidebar">
 
-  <div class="icon"><i class="fas fa-house"></i></div>
-  <div class="icon"><i class="fas fa-gamepad"></i></div>
-  <div class="icon"><i class="fas fa-table-cells"></i></div>
-  <div class="icon"><i class="fas fa-message"></i></div>
-  <div class="icon"><i class="fas fa-magnifying-glass"></i></div>
-  <div class="icon"><i class="fas fa-image"></i></div>
-  <div class="icon"><i class="fas fa-plus"></i></div>
+<div class="icon" onclick="showPage('home')">
+<i class="fas fa-house"></i>
+</div>
 
-  <div class="bottom-icons">
-    <div class="icon"><i class="fab fa-discord"></i></div>
-    <div class="icon"><i class="fas fa-file"></i></div>
-  </div>
+<div class="icon" onclick="showPage('games')">
+<i class="fas fa-gamepad"></i>
+</div>
+
+<div class="icon" onclick="showPage('categories')">
+<i class="fas fa-table-cells"></i>
+</div>
+
+<div class="icon" onclick="showPage('chat')">
+<i class="fas fa-message"></i>
+</div>
+
+<div class="icon" onclick="openSearch()">
+<i class="fas fa-magnifying-glass"></i>
+</div>
+
+<div class="icon" onclick="showPage('images')">
+<i class="fas fa-image"></i>
+</div>
+
+<div class="icon" onclick="addGame()">
+<i class="fas fa-plus"></i>
+</div>
+
+<div class="bottom-icons">
+
+<div class="icon"
+onclick="window.open('https://discord.com','_blank')">
+<i class="fab fa-discord"></i>
+</div>
+
+<div class="icon" onclick="showPage('files')">
+<i class="fas fa-file"></i>
+</div>
+
+</div>
 
 </div>
 
 <!-- MAIN -->
+
 <div class="main">
+
+<!-- HOME -->
+
+<div class="page" id="home">
 
 <div class="logo"></div>
 
 <h1>Codez UBG</h1>
 
 <p class="subtitle">
-The ultimate game site to play games!
-</p>
-
-<p class="subtitle2">
-Hundreds of games added!
+Ultimate game hub
 </p>
 
 <div class="buttons">
-<button>Export Save</button>
-<button>Import Save</button>
+<button onclick="exportSave()">
+Export Save
+</button>
+
+<button onclick="importSave()">
+Import Save
+</button>
 </div>
 
-<div class="counter">
-<h2>Views:</h2>
-<div class="digits" id="views">00000314499</div>
-
-<h2>Players:</h2>
-<div class="digits" id="players">00000106397</div>
 </div>
 
-<div class="footer">
-By using this site you agree to Terms & Privacy Policy
+<!-- GAMES -->
+
+<div class="page hidden" id="games">
+
+<h1>Games</h1>
+
+<div class="game-grid">
+
+<div class="game-card"
+onclick="openGame('https://orteil.dashnet.org/cookieclicker/')">
+
+Cookie Clicker
+
+</div>
+
+<div class="game-card"
+onclick="openGame('https://play2048.co/')">
+
+2048
+
+</div>
+
+<div class="game-card"
+onclick="openGame('https://run3.io/')">
+
+Run 3
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CATEGORIES -->
+
+<div class="page hidden" id="categories">
+
+<h1>Categories</h1>
+
+<p>Action</p>
+<p>Arcade</p>
+<p>Puzzle</p>
+<p>Idle</p>
+
+</div>
+
+<!-- CHAT -->
+
+<div class="page hidden" id="chat">
+
+<h1>Community</h1>
+
+<p>Chat system coming soon</p>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="page hidden" id="images">
+
+<h1>Wallpapers</h1>
+
+<p>Image gallery coming soon</p>
+
+</div>
+
+<!-- FILES -->
+
+<div class="page hidden" id="files">
+
+<h1>Files</h1>
+
+<p>Your files appear here</p>
+
+</div>
+
+</div>
+
+<!-- GAME MODAL -->
+
+<div id="gameModal">
+
+<div id="gameBox">
+
+<span onclick="closeGame()" id="closeBtn">
+✖
+</span>
+
+<iframe id="gameFrame"></iframe>
+
 </div>
 
 </div>
 
 <!-- CLOCK -->
+
 <div class="clock-box">
+
 <div id="clock"></div>
-<div class="date">SYSTEM</div>
+
+<div class="date">
+SYSTEM
+</div>
+
 </div>
 
 <script src="script.js"></script>
